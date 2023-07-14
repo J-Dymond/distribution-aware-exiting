@@ -1,0 +1,56 @@
+## Scripts
+- <tt>train.py</tt>: Code for training the branched models
+    - input arguments:
+        - exp_name: name of the experiment 
+        - backbone: The backbone architecture to be used (currently only functionality for ResNet)
+        - depth: Number of layers for the backbone architecture to use
+        - width: Width of the backbone architecture (as a fraction, ie. 1.0=standard, 2.0=2x, 0.5=0.5x, etc.)
+        - n_branches: Number of branches to attach to backbone
+        - data: dataset to train on
+        - epochs: number of epochs to train
+        - batch_size: batch_size of experiment
+        - learning_rate: learning rate for experiment 
+        - loss: loss function to use cross_entropy used in this work, other losses don't function as intended
+        - resolution_dependent: passed into the <tt>get_model()</tt> function, dictates the first layer convolution size
+    
+- <tt>slimmable_train.py</tt>: Code for training 'slimmable' branched models
+    - input arguments:
+        - exp_name: name of the experiment 
+        - backbone: The backbone architecture to be used (currently only functionality for ResNet)
+        - depth: Number of layers for the backbone architecture to use
+        - width: Width of the backbone architecture (as a fraction, ie. 1.0=standard, 2.0=2x, 0.5=0.5x, etc.)
+        - n_branches: Number of branches to attach to backbone
+        - data: dataset to train on
+        - epochs: number of epochs to train
+        - batch_size: batch_size of experiment
+        - learning_rate: learning rate for experiment 
+        - loss: loss function to use cross_entropy used in this work, other losses don't function as intended
+        - resolution_dependent: passed into the <tt>get_model()</tt> function, dictates the first layer convolution size
+- <tt>get_embeddings.py</tt>: Code for retrieving the embeddings on the train/validation set
+    - input arguments: 
+        - exp_name: directory of the experiment 
+        - weights_file: directory of the weights file (relative to exp_name)
+        - data: dataset to get embeddings on (typically use the training set)
+        - partition: partition of data to get embeddings for (typically use train or validation)
+        - batch_size: batch_size of experiment
+        - width_mode: for use with 'slimmable' models, dictates the width mode of the experiment
+        - stacking: stack embeddings as you go (can cause memory issues), or at the end (recommended) 
+- <tt>knn_OOD.py</tt>: This performs the knn measurements using the OOD test sets
+    - input arguments:
+        - exp_name: directory of the experiment 
+        - weights_file: directory of the weights file (relative to exp_name)
+        - k: How many samples to use in KNN algorithm
+        - data_train: Specifies the dataset to use for training. Default value is 'CIFAR10'.
+        - data_test: Specifies the dataset to use for testing. Default value is 'CIFAR100'.
+        - partition_train: Specifies the partition of the training dataset to use. Default value is 'train'.
+        - partition_test: Specifies the partition of the testing dataset to use. Default value is 'test'.
+        - batch_size: Specifies the batch size for training. Default value is 128.
+        - width_mode: Specifies the width mode if using a slimmable network. Valid options are 'full', 'half', and 'quarter'. Defaults to 'full'.
+- <tt>get_predictions.py</tt>: This performs the inference on the test set, to obtain the accuracy on each ID set, it also saves the raw outputs
+    - input arguments
+        - exp_name: Directory to obtain predictions from.
+        - data: Which dataset to use. Default value is 'CIFAR10'.
+        - batch_size: Batch size for training. Default value is 128.
+        - width_mode: If using slimmable net, define width mode ('full', 'half', 'quarter'). Defaults to 'full'.
+        - exit_policy: Exit policy to obtain exits for. Default value is 'entropic'.
+        - decision_module_path: If using a decision module for the exit policy, the directory to take the weights from. Default value is 'none', (this was not used in the paper).
