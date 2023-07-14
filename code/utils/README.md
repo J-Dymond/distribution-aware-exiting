@@ -1,4 +1,4 @@
-# Utils
+# Utils
 
 ## <tt>get_data.py</tt>
 This module provides functions to load and preprocess datasets for training and testing machine learning models. The main function is: 
