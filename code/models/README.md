@@ -1,4 +1,4 @@
-## Models
+## Models
 
 This code is used in the paper [Adapting Branched Networks to Enable Progressive Intelligence](https://bmvc2022.mpi-inf.mpg.de/0990.pdf), to create branched models using a ResNet backbone. The ResNet backbone script is dynamic depending on the depth and width of the desired model. Branched model will create a wrapper which attaches the branches to a model using a forward hook, allowing us to simulate a branched model of any width, depth, and number of branches.
 
