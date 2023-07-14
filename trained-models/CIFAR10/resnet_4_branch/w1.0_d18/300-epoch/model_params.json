@@ -1,0 +1,1 @@
+{"exp_name": "300-epoch", "backbone": "resnet", "depth": 18, "width": 1.0, "n_branches": 4, "data": "CIFAR10", "epochs": 300, "batch_size": 128, "learning_rate": 0.01, "resolution_dependent": true, "n_classes": 10, "in_channels": 3, "res": 32}
