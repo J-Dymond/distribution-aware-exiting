@@ -1,0 +1,6 @@
+**/*.pth
+**/*all_k_distances.npy
+**/*knn_distances.npy
+**/*.pt
+**/*.DS_Store
+trained-models/CIFAR100/*/*/*/analysis/callibration/train*

@@ -30,3 +30,5 @@ The repository is organised as such:
 - <tt>bash-scripts</tt>
     - This contains bash scripts for running experiments using <tt>SLURM</tt> workload manager
     - These can be called to run the experiments of the paper
+- <tt>trained-models</tt>
+    - Trained models are stored here, along with any of their evaluation results
