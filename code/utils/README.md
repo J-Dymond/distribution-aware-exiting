@@ -1,8 +1,8 @@
 # Utils
 
-## <tt>get_data.py</tt>
+## <tt>get_data.py</tt>
 This module provides functions to load and preprocess datasets for training and testing machine learning models. The main function is: 
-##### <tt>get_dataset(dataset_name, batch_size, shuffling=True, val_set=True, train_augmentations='standard', two_crop=False)</tt>
+##### <tt>get_dataset(dataset_name, batch_size, shuffling=True, val_set=True, train_augmentations='standard', two_crop=False)</tt>
 - Load and preprocess the specified dataset.
 
 - Arguments:
@@ -25,11 +25,11 @@ This module provides functions to load and preprocess datasets for training and 
         - test_loader (torch.utils.data.DataLoader): DataLoader for the test set.
         - data_props (dict): Dictionary containing properties of the dataset.
 
-## <tt>get_model.py</tt>
+## <tt>get_model.py</tt>
 
 This module provides code to create a model of any size, and attach the desired number of branches.
 
-##### <tt>create_model(model_hyperparameters)</tt>
+##### <tt>create_model(model_hyperparameters)</tt>
 - Function to create a model given a hyperparameters dictionary.
 
 - Inputs:
