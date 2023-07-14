@@ -1,4 +1,4 @@
-## Exploiting Epistemic Uncertainty at Inference Time 
+##Exploiting Epistemic Uncertainty at Inference Time 
 
 This repository contains the code used for the Paper titled [Exploiting epistemic uncertainty at inference time for early-exit power saving](). 
 
